@@ -1,0 +1,21 @@
+{
+  "name": "eren",
+  "private": true,
+  "packageManager": "npm@10.9.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "db:setup": "node ./scripts/db/setup.mjs",
+    "dev:web": "npm --workspace @eren/web run dev",
+    "dev:worker": "npm --workspace @eren/temporal run worker",
+    "lint:web": "npm --workspace @eren/web run lint",
+    "test:e2e": "node --import tsx --test tests/e2e/run-flow.test.ts",
+    "test:agent:e2e": "node --import tsx --test tests/e2e/vertex-agent-run.test.ts",
+    "test:first-run:e2e": "node --import tsx --test tests/e2e/first-run-git-init.test.ts",
+    "typecheck:domain": "npm --workspace @eren/domain run typecheck",
+    "typecheck:persistence": "npm --workspace @eren/persistence run typecheck",
+    "typecheck:temporal": "npm --workspace @eren/temporal run typecheck"
+  }
+}
